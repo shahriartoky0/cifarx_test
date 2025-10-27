@@ -23,23 +23,3 @@ class MyApp extends ConsumerWidget {
 
 
 
-// Example SecondScreen widget
-class SecondScreen extends ConsumerWidget {
-  const SecondScreen({super.key});
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Second Screen')),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // Navigate back to HomeScreen
-            context.go('/');
-          },
-          child: const Text('Go back to Home Screen'),
-        ),
-      ),
-    );
-  }
-}

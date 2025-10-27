@@ -13,12 +13,12 @@ class ProductsDataSource {
 
   Future<NetworkResponse> fetchProducts({required int skip}) async {
     try {
-      final response = await _networkCaller.getRequest(
+      final NetworkResponse response = await _networkCaller.getRequest(
         '$_baseUrl/products?limit=$_limit&skip=$skip',
       );
 
       if (response.isSuccess && response.jsonResponse != null) {
-        final productsResponse =
+        final ProductsResponseModel productsResponse =
         ProductsResponseModel.fromJson(response.jsonResponse!);
         return NetworkResponse(
           isSuccess: true,
@@ -26,6 +26,7 @@ class ProductsDataSource {
           jsonResponse: productsResponse.toJson(),
         );
       }
+
 
       return response;
     } catch (e) {
@@ -41,12 +42,12 @@ class ProductsDataSource {
     required int skip,
   }) async {
     try {
-      final response = await _networkCaller.getRequest(
+      final NetworkResponse response = await _networkCaller.getRequest(
         '$_baseUrl/products/search?q=$query&limit=$_limit&skip=$skip',
       );
 
       if (response.isSuccess && response.jsonResponse != null) {
-        final productsResponse =
+        final ProductsResponseModel productsResponse =
         ProductsResponseModel.fromJson(response.jsonResponse!);
         return NetworkResponse(
           isSuccess: true,

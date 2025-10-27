@@ -85,6 +85,7 @@ class NetworkCaller {
         );
       }
 
+
       // Handle unsuccessful responses
       return NetworkResponse(
         isSuccess: false,

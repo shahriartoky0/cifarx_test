@@ -1,6 +1,6 @@
 import 'product_model.dart';
 
-enum HomeStatus { initial, loading, loadingMore, success, error }
+enum HomeStatus { initial, loading, loadingMore, success, error , unauthorize}
 
 class HomeState {
   final HomeStatus status;
@@ -24,7 +24,7 @@ class HomeState {
   factory HomeState.initial() {
     return HomeState(
       status: HomeStatus.initial,
-      products: [],
+      products: <ProductModel>[],
       currentPage: 0,
       totalProducts: 0,
       hasMoreData: true,

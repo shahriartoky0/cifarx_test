@@ -1,11 +1,13 @@
 import 'package:cifarx_test/core/config/app_sizes.dart';
 import 'package:cifarx_test/core/design/app_colors.dart';
+import 'package:cifarx_test/core/routes/app_routes.dart';
 import 'package:cifarx_test/features/home/presentation/models/home_state_model.dart';
 import 'package:cifarx_test/features/home/presentation/models/product_model.dart';
 import 'package:cifarx_test/features/home/presentation/providers/home_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../widgets/animated_product_card.dart';
 import '../widgets/empty_view.dart';
 import '../widgets/load_more_skeleton.dart';
@@ -31,6 +33,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     // Load initial data
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(homeControllerProvider.notifier).loadProducts();
+      final HomeState op = ref.read(homeControllerProvider);
+      if (op.errorCode == 403 || op.errorCode == 401) {
+        context.go(AppRoutes.login);
+      }
     });
   }
 
