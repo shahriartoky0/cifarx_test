@@ -1,3 +1,4 @@
+import 'package:cifarx_test/core/config/app_url.dart';
 import 'package:cifarx_test/features/home/presentation/models/product_response_model.dart';
 
 import '../../../core/network/network_caller.dart';
@@ -8,7 +9,7 @@ class ProductsDataSource {
 
   ProductsDataSource(this._networkCaller);
 
-  static const String _baseUrl = 'https://dummyjson.com';
+  static const String _baseUrl = AppUrl.baseUrl;
   static const int _limit = 10;
 
   Future<NetworkResponse> fetchProducts({required int skip}) async {
