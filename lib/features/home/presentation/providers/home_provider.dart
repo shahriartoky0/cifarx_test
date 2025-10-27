@@ -35,3 +35,8 @@ final StateNotifierProvider<HomeProvider, HomeState> homeControllerProvider =
     StateNotifierProvider<HomeProvider, HomeState>((Ref ref) {
       return HomeProvider(ref.watch(productsRepositoryProvider));
     });
+// Provider for search query
+final searchQueryProvider = StateProvider<String>((ref) => '');
+
+// Provider for tracking if we're loading more (separate from state)
+final isLoadingMoreProvider = StateProvider<bool>((ref) => false);

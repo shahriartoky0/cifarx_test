@@ -9,7 +9,7 @@ class ToastManager {
 
   static void show({
     required String message,
-    Widget icon = const Icon(Icons.error_outline),
+    Widget icon = const Icon(Icons.error_outline, color: AppColors.white),
     Color backgroundColor = AppColors.primaryColor,
     Color iconColor = Colors.white,
     Color textColor = Colors.white,

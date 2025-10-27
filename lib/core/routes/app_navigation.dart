@@ -1,5 +1,5 @@
 import 'package:cifarx_test/core/routes/app_routes.dart';
-import 'package:cifarx_test/features/home/presentation/views/home_screen.dart';
+import 'package:cifarx_test/features/home/presentation/views/screens/home_screen.dart';
  import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
