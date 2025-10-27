@@ -1,6 +1,7 @@
 # CifarX Test - Flutter E-Commerce Application
 
-A modern Flutter e-commerce application built with clean architecture, Riverpod state management, and beautiful UI/UX.
+A modern Flutter e-commerce application built with clean architecture, Riverpod state management,
+and beautiful UI/UX.
 
 ---
 
@@ -8,12 +9,13 @@ A modern Flutter e-commerce application built with clean architecture, Riverpod 
 
 ### **DummyJSON API** - `https://dummyjson.com`
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/products?limit=10&skip=0` | GET | Fetch paginated products |
-| `/products/search?q=phone&limit=10&skip=0` | GET | Search products |
+| Endpoint                                   | Method | Description              |
+|--------------------------------------------|--------|--------------------------|
+| `/products?limit=10&skip=0`                | GET    | Fetch paginated products |
+| `/products/search?q=phone&limit=10&skip=0` | GET    | Search products          |
 
 **Example Response:**
+
 ```json
 {
   "products": [
@@ -36,6 +38,7 @@ A modern Flutter e-commerce application built with clean architecture, Riverpod 
 ```
 
 **Features Implemented:**
+
 - ✅ Pagination (10 items per page)
 - ✅ Real-time search
 - ✅ Local caching with GetStorage
@@ -47,17 +50,20 @@ A modern Flutter e-commerce application built with clean architecture, Riverpod 
 ## 📝 Assumptions
 
 ### **API**
+
 - DummyJSON API is always available
 - Product data structure remains consistent
 - No authentication required for product endpoints
 
 ### **User Flow**
+
 - Login required to access home screen
 - Users can scroll infinitely to load more products
 - Search clears on refresh or navigation back
 - Products are cached for offline viewing
 
 ### **UI/UX**
+
 - iOS-style smooth scrolling preferred
 - Skeleton loading over spinners
 - Pull-to-refresh with no visible indicator
@@ -65,6 +71,7 @@ A modern Flutter e-commerce application built with clean architecture, Riverpod 
 - Immediate visual feedback on interactions
 
 ### **Technical**
+
 - 10 items per page optimal for performance
 - 85% scroll position triggers load more
 - Email requires standard format (regex validation)
@@ -76,6 +83,7 @@ A modern Flutter e-commerce application built with clean architecture, Riverpod 
 ## 📌 Additional Notes
 
 ### **Architecture**
+
 ```
 lib/
 ├── core/               # Config, design, network, utils, routes
@@ -90,18 +98,21 @@ lib/
 ```
 
 ### **State Management**
+
 - **Riverpod** for all state management
 - No `setState` - all logic in providers
 - Immutable state with `copyWith` pattern
 - Status-based state: `initial`, `loading`, `success`, `error`
 
 ### **Design System**
+
 - **Colors:** Blue gradient (`#002454 → #4A90E2`), purple accent, green success
 - **Effects:** Glassmorphism, backdrop blur, smooth gradients
 - **Animations:** Fade-in, slide-up, shimmer loading
 - **Spacing:** Consistent sizing system via `AppSizes`
 
 ### **Key Features**
+
 - 🎨 Modern gradient UI with glassmorphism
 - 🔍 Sticky search bar with real-time results
 - 📜 Infinite scroll with skeleton loading
@@ -111,6 +122,7 @@ lib/
 - 🌐 Social login UI (Google, Apple)
 
 ### **Performance Optimizations**
+
 - Image caching with `cacheWidth: 800`
 - ValueKey on list items prevents rebuilds
 - Local storage caching for offline support
@@ -118,6 +130,7 @@ lib/
 - Early load trigger (85% vs 90%)
 
 ### **Known Limitations**
+
 - DummyJSON has fixed dataset (~100 products)
 - No real authentication (simulated)
 - No product detail page
@@ -125,6 +138,7 @@ lib/
 - No filters or sorting
 
 ### **Error Handling**
+
 - Toast notifications for user actions
 - Error states with retry buttons
 - Empty states with helpful messages
@@ -147,6 +161,7 @@ flutter build ios --release    # iOS
 ```
 
 ### **Dependencies**
+
 ```yaml
 flutter_riverpod: ^2.4.0
 go_router: ^13.0.0
@@ -181,5 +196,7 @@ lib/
 ```
 
 ---
-** APK link : "https://drive.google.com/file/d/1yuXwUFDaROo1tG3u5Wj4MkFrd5bJibb8/view?usp=sharing"
+** APK link : "https://drive.google.com/file/d/1tM3cu95g8DW5j2FvRdtzpgGuzAbtvz1V/view?usp=drive_link"
+
+
 **Built with ❤️ using Flutter & Riverpod**
