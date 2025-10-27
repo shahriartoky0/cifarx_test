@@ -16,7 +16,7 @@ class AppNavigation {
       // Home Screen route
       GoRoute(
         path: AppRoutes.initialRoute,
-        builder: (BuildContext context, GoRouterState state) => const LoginScreen(),
+        builder: (BuildContext context, GoRouterState state) => const HomeScreen(),
       ),
       // Home Screen route
       GoRoute(
@@ -26,7 +26,7 @@ class AppNavigation {
       // Login Screen route
       GoRoute(
         path: AppRoutes.login,
-        builder: (BuildContext context, GoRouterState state) => const HomeScreen(),
+        builder: (BuildContext context, GoRouterState state) => const LoginScreen(),
       ),
     ],
   );
